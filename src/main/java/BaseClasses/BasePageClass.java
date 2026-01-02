@@ -1,0 +1,64 @@
+package BaseClasses;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.util.Date;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+
+import PageClasses.HomePage;
+import Utilities.ExtentReportManager;
+
+public class BasePageClass {
+//	public static Properties config;
+	public static WebDriver driver;
+	public ExtentReports report;
+    public ExtentTest logger;
+	
+	public void invokeBrowser(String browserName) {
+		if (report == null) {
+		    String timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
+		    String reportName = "NykaaReport_" + timeStamp + ".html";
+
+		    ExtentHtmlReporter htmlReporter =new ExtentHtmlReporter(System.getProperty("user.dir")+ "/test-output/" + reportName);
+
+		    report = new ExtentReports();   
+		    report.attachReporter(htmlReporter);
+		}
+        try {
+            if (browserName.equalsIgnoreCase("Edge")) {
+                System.setProperty("webdriver.edge.driver",
+                        "C:\\Users\\Prachi\\eclipse-workspace\\NykaaProject\\Drivers\\msedgedriver.exe");
+                driver = new EdgeDriver();
+            } else {
+                System.setProperty("webdriver.chrome.driver",
+                        "C:\\Users\\Prachi\\eclipse-workspace\\NykaaProject\\Drivers\\chromedriver.exe");
+                driver = new ChromeDriver();
+            }
+
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
+            driver.manage().window().maximize();
+        } catch (Exception e) {
+            System.out.println("Browser initialization failed: " + e.getMessage());
+        }
+    }
+
+    public HomePage OpenApplication() {
+        driver.get("https://www.nykaa.com/");
+        return PageFactory.initElements(driver, HomePage.class);
+    }
+}
