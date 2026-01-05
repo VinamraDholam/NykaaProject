@@ -50,7 +50,7 @@ public class HomePage {
 	    @FindBy(xpath = "//span[text()='Discount']")
 	    public WebElement discountCategoryDropdown;
 
-	    @FindBy(xpath = "//span[text()='20% and above']")
+	    @FindBy(xpath = "//span[text()='All discounted products']")
 	    public WebElement discountRangeOption;
 	    
 	    @FindBy(xpath = "//span[text()='Color']")

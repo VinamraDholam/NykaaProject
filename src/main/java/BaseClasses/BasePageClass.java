@@ -23,21 +23,11 @@ import PageClasses.HomePage;
 import Utilities.ExtentReportManager;
 
 public class BasePageClass {
-//	public static Properties config;
 	public static WebDriver driver;
-	public ExtentReports report;
+    public ExtentReports report = ExtentReportManager.getReportInstance(); // Use manager
     public ExtentTest logger;
-	
-	public void invokeBrowser(String browserName) {
-		if (report == null) {
-		    String timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
-		    String reportName = "NykaaReport_" + timeStamp + ".html";
 
-		    ExtentHtmlReporter htmlReporter =new ExtentHtmlReporter(System.getProperty("user.dir")+ "/test-output/" + reportName);
-
-		    report = new ExtentReports();   
-		    report.attachReporter(htmlReporter);
-		}
+    public void invokeBrowser(String browserName) {
         try {
             if (browserName.equalsIgnoreCase("Edge")) {
                 System.setProperty("webdriver.edge.driver",
@@ -52,6 +42,7 @@ public class BasePageClass {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
             driver.manage().window().maximize();
+
         } catch (Exception e) {
             System.out.println("Browser initialization failed: " + e.getMessage());
         }

@@ -12,12 +12,14 @@ import com.aventstack.extentreports.Status;
 import BaseClasses.BasePageClass;
 import PageClasses.BeautyAdvicePage;
 import PageClasses.ContactUsPage;
+import PageClasses.HairPage;
 import PageClasses.HomePage;
 import PageClasses.MenPage;
 import PageClasses.SkinPage;
 
 public class TestData  extends BasePageClass{
 	HomePage homePage;
+	HairPage hairPage;
 	SkinPage skinPage;
 	BeautyAdvicePage beautyAdvicePage;
 	MenPage menPage;
@@ -27,25 +29,19 @@ public class TestData  extends BasePageClass{
  
 	@BeforeMethod
 	public void setup() {
-	   
-	    invokeBrowser("Edge"); 
-	    
-	 
-	    homePage = OpenApplication(); 
-	    
-	   
+	    invokeBrowser("Edge");
+	    homePage = OpenApplication();
+
+	    hairPage = new HairPage(driver);
 	    skinPage = new SkinPage(driver);
 	    beautyAdvicePage = new BeautyAdvicePage(driver);
 	    menPage = new MenPage(driver);
 	    contactUsPage = new ContactUsPage(driver);
 	}
 
- 
- @Test
- public void runCompleteFlow() throws IOException {
-     
-     logger = report.createTest("Nykaa Automation Report");
-
+	@Test
+	public void runCompleteFlow() throws IOException {
+	    logger = report.createTest("Nykaa Automation Report");
     
 
      // --- HOMEPAGE SECTION ---
@@ -79,6 +75,9 @@ public class TestData  extends BasePageClass{
      
 	     homePage.closeChildWindowAndReturn();
 	     homePage.scrollToTop();
+	     
+	     
+	    
      
      
      //--------------------------------- SKINPAGE----------------------------//
@@ -131,6 +130,9 @@ public class TestData  extends BasePageClass{
      
   
 //menPage.selectBrandBeautywise();
+     
+     //------------------------------- HAIRPAGE ---------------------------//
+	    hairPage.printAllHairOptions();
   
   //------------------------------------------- Contact Us Page -------------------------------//
   

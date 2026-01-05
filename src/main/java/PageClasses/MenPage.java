@@ -112,9 +112,9 @@ public class MenPage {
 	        System.out.println("Total product count: " + count);
 	    }
 	    
-	    public ContactUsPage closeWellnessWindow() {
+	    public HairPage closeWellnessWindow() {
 	        driver.close(); 
 	        driver.switchTo().window(parentWindow); 
-	        return PageFactory.initElements(driver, ContactUsPage.class);
+	        return PageFactory.initElements(driver, HairPage.class);
 	    }
 }
