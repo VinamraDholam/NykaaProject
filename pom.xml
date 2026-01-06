@@ -26,13 +26,14 @@
     <artifactId>webdrivermanager</artifactId>
     <version>5.9.2</version>
 </dependency>
-    <dependency>
-    	<groupId>CourseraPOMFrameWorkProject</groupId>
-    	<artifactId>CourseraPOMFrameWorkProject</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
    
-    
+   
+    <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.36.0</version>
+</dependency>
+
     <dependency>
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
