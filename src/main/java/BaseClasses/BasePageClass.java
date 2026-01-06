@@ -30,12 +30,12 @@ public class BasePageClass {
     public void invokeBrowser(String browserName) {
         try {
             if (browserName.equalsIgnoreCase("Edge")) {
-                System.setProperty("webdriver.edge.driver",
-                        "C:\\Users\\Prachi\\eclipse-workspace\\NykaaProject\\Drivers\\msedgedriver.exe");
+            	System.setProperty("webdriver.edge.driver",
+            	        System.getProperty("user.dir") + "\\Drivers\\msedgedriver.exe");
                 driver = new EdgeDriver();
             } else {
-                System.setProperty("webdriver.chrome.driver",
-                        "C:\\Users\\Prachi\\eclipse-workspace\\NykaaProject\\Drivers\\chromedriver.exe");
+            	System.setProperty("webdriver.chrome.driver",
+            	        System.getProperty("user.dir") + "\\Drivers\\chromedriver.exe");
                 driver = new ChromeDriver();
             }
 
