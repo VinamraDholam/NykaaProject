@@ -21,11 +21,11 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-    	<groupId>BDDCucumberFrameworks</groupId>
-    	<artifactId>BDDCucumberFramework</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
+   	<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.9.2</version>
+</dependency>
     <dependency>
     	<groupId>CourseraPOMFrameWorkProject</groupId>
     	<artifactId>CourseraPOMFrameWorkProject</artifactId>
