@@ -42,7 +42,11 @@
     </dependency>
 
     <!-- ExtentReports -->
-   
+   <dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>4.1.7</version>
+</dependency>
 
     <!-- Commons IO -->
     <dependency>
