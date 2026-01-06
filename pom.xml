@@ -31,11 +31,7 @@
     	<artifactId>CourseraPOMFrameWorkProject</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
-    <dependency>
-    	<groupId>POMFrameWork</groupId>
-    	<artifactId>POMFrameWork_MakeMyTrip</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
+   
     
     <dependency>
     <groupId>com.aventstack</groupId>
