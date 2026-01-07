@@ -29,7 +29,7 @@ public class TestData  extends BasePageClass{
  
 	@BeforeMethod
 	public void setup() {
-	    invokeBrowser("Chrome");
+	    invokeBrowser("Edge");
 	    homePage = OpenApplication();
 
 	    hairPage = new HairPage(driver);
