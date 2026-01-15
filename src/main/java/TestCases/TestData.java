@@ -45,18 +45,18 @@ public class TestData  extends BasePageClass{
     
 
      // --- HOMEPAGE SECTION ---
-//     logger.log(Status.INFO, "Starting Search Flow on Homepage");
-//     homePage.searchProduct("Lipstick");
-//     
-//     logger.log(Status.INFO, "Applying Brand,Price,Discount,Shades Filters");
-//     homePage.clickBrandDropdown();
-//     homePage.selectBlurBrand();
-//     homePage.selectHudaBeautyBrand();
-//     homePage.closeBrandDropdown();
-//     
-//     homePage.clickPriceDropdown();
-//     homePage.selectPriceRange();
-//     homePage.closePriceDropdown();
+     logger.log(Status.INFO, "Starting Search Flow on Homepage");
+     homePage.searchProduct("Lipstick");
+     
+     logger.log(Status.INFO, "Applying Brand,Price,Discount,Shades Filters");
+     homePage.clickBrandDropdown();
+     homePage.selectBlurBrand();
+     homePage.selectHudaBeautyBrand();
+     homePage.closeBrandDropdown();
+     
+     homePage.clickPriceDropdown();
+     homePage.selectPriceRange();
+     homePage.closePriceDropdown();
      
      homePage.clickDiscountDropdown();
      	homePage.selectDiscountRange();
