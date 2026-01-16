@@ -61,14 +61,14 @@ public class MenPage {
 	    
 	    
 	    //---------------------------- METHODS -------------------------------------------//
-	    public void clickMenMenuAndSwitch() {
-
-	        parentWindow = driver.getWindowHandle(); // ✅ STORE parent
-
+	    public void clickMenMenu() {
+	        parentWindow = driver.getWindowHandle(); // store parent window
 	        wait.until(ExpectedConditions.elementToBeClickable(menMenuLink));
 	        menMenuLink.click();
+	    }
 
-	        wait.until(driver -> driver.getWindowHandles().size() > 1);
+	    public void switchToMenWindow() {
+	        wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 
 	        for (String win : driver.getWindowHandles()) {
 	            if (!win.equals(parentWindow)) {
@@ -77,6 +77,8 @@ public class MenPage {
 	            }
 	        }
 	    }
+
+
 
 
 	    public void selectHealthAndNutrition() {

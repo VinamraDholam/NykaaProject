@@ -68,7 +68,7 @@ public class TestData  extends BasePageClass{
      logger.log(Status.INFO, "Selecting Shade and Capturing Product Info");
      homePage.clickFirstLipstickProduct();
      homePage.switchToNewWindow();
-     homePage.scrollDown();
+     //homePage.scrollDown();
      homePage.selectCherryRedShade();
      homePage.displayFirstProductInfo();
      
@@ -121,7 +121,8 @@ public class TestData  extends BasePageClass{
      
      //-------------------------------------- MenPage --------------------------------//
      logger.log(Status.INFO, "Testing Men's Section Wellness Products");
-     menPage.clickMenMenuAndSwitch();
+     menPage.clickMenMenu();
+     menPage.switchToMenWindow();
      menPage.selectHealthAndNutrition();
      menPage.sortByNewArrivals();
      menPage.printTotalCount();

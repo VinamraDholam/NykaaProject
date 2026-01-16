@@ -25,7 +25,7 @@ public class ContactUsPage {
 	    public ContactUsPage(WebDriver driver) {
 	        this.driver = driver;
 	       PageFactory.initElements(driver, this);
-	        wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // wait up to 15 sec for popups
+	        wait = new WebDriverWait(driver, Duration.ofSeconds(20)); 
 	    }
 	    
 	    

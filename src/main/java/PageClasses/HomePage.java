@@ -171,11 +171,11 @@ public class HomePage {
 	        }
 	    }
 	    
-	    public void scrollDown() {
-	        JavascriptExecutor js = (JavascriptExecutor) driver;
-	    
-	        js.executeScript("window.scrollBy(0,300)", "");
-	    }
+//	    public void scrollDown() {
+//	        JavascriptExecutor js = (JavascriptExecutor) driver;
+//	    
+//	        js.executeScript("window.scrollBy(0,300)", "");
+//	    }
 	    public void selectCherryRedShade() {
 	        wait.until(ExpectedConditions.elementToBeClickable(cherryRedShade)).click();
 	    }
